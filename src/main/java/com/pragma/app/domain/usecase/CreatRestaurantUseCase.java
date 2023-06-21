@@ -3,11 +3,11 @@ package com.pragma.app.domain.usecase;
 import com.pragma.app.domain.model.Restaurant;
 import com.pragma.app.domain.spi.external.RestaurantRepository;
 
-public class CreateRestaurantUseCase {
+public class CreatRestaurantUseCase {
 
     private final RestaurantRepository restaurantRepository;
 
-    public CreateRestaurantUseCase(RestaurantRepository restaurantRepository) {
+    public CreatRestaurantUseCase(RestaurantRepository restaurantRepository) {
         this.restaurantRepository = restaurantRepository;
     }
 

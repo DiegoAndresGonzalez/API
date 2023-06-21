@@ -12,6 +12,7 @@ import javax.persistence.Entity;
 @RequiredArgsConstructor
 public class Restaurant{
 
+    private int idRestaurant;
     private String name;
     private String nit;
     private String address;
