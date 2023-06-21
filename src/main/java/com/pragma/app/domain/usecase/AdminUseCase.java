@@ -14,13 +14,13 @@ public class AdminUseCase implements IRestaurantServicePort {
     }
 
     @Override
-    public void createRestaurant(RestaurantModel restaurantModel) {
+    public void createRestaurantService(RestaurantModel restaurantModel) {
         validateRestaurantFields(restaurantModel);
         validateOwnerRole(restaurantModel.getIdOwner());
         validateNit(restaurantModel.getNit());
         validateCellPhoneRestaurant(restaurantModel.getCellPhoneRestaurant());
 
-        restaurantPersistence.createRestaurant(restaurantModel);
+        restaurantPersistence.createRestaurantPersistence(restaurantModel);
     }
 
     private void validateRestaurantFields(RestaurantModel restaurantModel) {
@@ -50,19 +50,19 @@ public class AdminUseCase implements IRestaurantServicePort {
         }
     }
 
-    private void validateCellPhoneRestaurant(String cellPhone) {
-        validateNumeric(cellPhone);
-        validateMaxLength(cellPhone);
+    private void validateCellPhoneRestaurant(String cellPhoneRestaurant) {
+        validateCellPhoneRestaurantIfIsNumeric(cellPhoneRestaurant);
+        validateMaxLengthCellPhoneRestaurant(cellPhoneRestaurant);
     }
 
-    private void validateNumeric(String value) {
-        if (!value.matches("\\+?\\d+")) {
+    private void validateCellPhoneRestaurantIfIsNumeric(String cellPhoneRestaurant) {
+        if (!cellPhoneRestaurant.matches("\\+?\\d+")) {
             throw new IllegalArgumentException("The restaurant's telephone number must be numeric.");
         }
     }
 
-    private void validateMaxLength(String value) {
-        if (value.length() > 13) {
+    private void validateMaxLengthCellPhoneRestaurant(String cellPhoneRestaurant) {
+        if (cellPhoneRestaurant.length() > 13) {
             throw new IllegalArgumentException("The restaurant's telephone number must have a maximum of 13 characters.");
         }
     }
