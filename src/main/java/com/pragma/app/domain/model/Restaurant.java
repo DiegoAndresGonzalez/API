@@ -17,5 +17,5 @@ public class Restaurant{
     private String address;
     private String cellPhoneRestaurant;
     private String urlLogo;
-    private Long idOwner;
+    private int idOwner;
 }
