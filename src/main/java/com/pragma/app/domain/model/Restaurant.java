@@ -18,6 +18,4 @@ public class Restaurant{
     private String cellPhoneRestaurant;
     private String urlLogo;
     private Long idOwner;
-
-
 }
