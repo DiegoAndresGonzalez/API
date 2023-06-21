@@ -1,6 +1,6 @@
 package com.pragma.app.domain.usecase;
 
-import com.pragma.app.domain.api.RestaurantServicePort;
+import com.pragma.app.domain.api.IRestaurantServicePort;
 
-public class AdminUseCase implements RestaurantServicePort {
+public class AdminUseCase implements IRestaurantServicePort {
 }
