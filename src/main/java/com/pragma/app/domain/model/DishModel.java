@@ -4,16 +4,21 @@ public class DishModel {
 
     private Long id;
     private String name;
+    private Integer price;
     private String description;
     private String urlImage;
     private String category;
     private Long restaurantId;
     private boolean active;
 
-    public DishModel(Long id, String name, String description, String urlImage, String category, Long restaurantId, boolean active) {
+    public DishModel(Long id, String name, Integer price, String description) {
         this.id = id;
         this.name = name;
+        this.price = price;
         this.description = description;
+    }
+
+    public DishModel(String urlImage, String category, Long restaurantId, boolean active) {
         this.urlImage = urlImage;
         this.category = category;
         this.restaurantId = restaurantId;
@@ -77,5 +82,13 @@ public class DishModel {
 
     public void setActive(boolean active) {
         this.active = active;
+    }
+
+    public Integer getPrice() {
+        return price;
+    }
+
+    public void setPrice(Integer price) {
+        this.price = price;
     }
 }
