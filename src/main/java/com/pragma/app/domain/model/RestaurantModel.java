@@ -10,6 +10,9 @@ public class RestaurantModel {
     private String urlLogo;
     private Long idOwner;
 
+    public RestaurantModel() {
+    }
+
     public RestaurantModel(Long idRestaurant, String name, String nit, String address, String cellPhoneRestaurant, String urlLogo, Long idOwner) {
         this.idRestaurant = idRestaurant;
         this.name = name;
