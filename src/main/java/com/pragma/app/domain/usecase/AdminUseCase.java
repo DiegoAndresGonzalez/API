@@ -18,10 +18,6 @@ public class AdminUseCase implements IRestaurantServicePort {
 
         validateIfCellPhoneRestaurantIsValid(restaurantModel.getCellPhoneRestaurant());
 
-        if(restaurantModel.getAddress() == null ){
-            throw new InvalidDataException("Fields required");
-        }
-
         if(!restaurantModel.getNit().matches("\\d+")) {
             throw new InvalidDataException("The NIT must contain only numeric");
         }
