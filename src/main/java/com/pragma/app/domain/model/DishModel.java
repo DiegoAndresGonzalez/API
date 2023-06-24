@@ -8,7 +8,7 @@ public class DishModel {
     private String description;
     private String urlImage;
     private String category;
-    private Long restaurantId;
+    private Long idRestaurant;
     private boolean active;
 
     public DishModel(Long id, String name, Integer price, String description) {
@@ -18,10 +18,10 @@ public class DishModel {
         this.description = description;
     }
 
-    public DishModel(String urlImage, String category, Long restaurantId, boolean active) {
+    public DishModel(String urlImage, String category, Long idRestaurant, boolean active) {
         this.urlImage = urlImage;
         this.category = category;
-        this.restaurantId = restaurantId;
+        this.idRestaurant = idRestaurant;
         this.active = active;
     }
 
@@ -68,12 +68,12 @@ public class DishModel {
         this.category = category;
     }
 
-    public Long getRestaurantId() {
-        return restaurantId;
+    public Long getIdRestaurant() {
+        return idRestaurant;
     }
 
-    public void setRestaurantId(Long restaurantId) {
-        this.restaurantId = restaurantId;
+    public void setIdRestaurant(Long idRestaurant) {
+        this.idRestaurant = idRestaurant;
     }
 
     public boolean isActive() {
