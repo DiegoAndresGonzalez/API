@@ -16,7 +16,7 @@ public class AdminUseCase implements IRestaurantServicePort {
     @Override
     public RestaurantModel saveRestaurant(RestaurantModel restaurantModel) {
 
-        validateIfCellPhoneRestaurantContainsOnlyNumbers(restaurantModel.getCellPhoneRestaurant());
+        validateIfCellPhoneRestaurantIsValid(restaurantModel.getCellPhoneRestaurant());
 
         if(restaurantModel.getAddress() == null ){
             throw new InvalidDataException("Fields required");
@@ -29,10 +29,13 @@ public class AdminUseCase implements IRestaurantServicePort {
         restaurantPersistence.saveRestaurantPersistence(restaurantModel);
         return  restaurantModel;
     }
+    private void validateIfCellPhoneRestaurantIsValid(String cellPhoneRestaurant) {
+        if(!cellPhoneRestaurant.matches("[+\\d]+")) {
+            throw new InvalidDataException("The cell phone field must contain only numbers and the '+' symbol");
+        }
 
-    private void validateIfCellPhoneRestaurantContainsOnlyNumbers(String cellPhoneRestaurant) {
-        if(!cellPhoneRestaurant.matches("\\d+")) {
-            throw new InvalidDataException("The cell phone field must contain only numbers");
+        if(cellPhoneRestaurant.length() > 13){
+            throw new InvalidDataException("The cell phone field must have a maximum of 13 digits");
         }
     }
 }
