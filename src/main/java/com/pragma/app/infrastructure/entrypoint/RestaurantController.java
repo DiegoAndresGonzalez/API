@@ -1,6 +1,6 @@
 package com.pragma.app.infrastructure.entrypoint;
 
-import com.pragma.app.domain.model.RestaurantModel;
+import com.pragma.app.infrastructure.driveadapter.entity.RestaurantEntity;
 import com.pragma.app.infrastructure.driveadapter.persistence.IRestaurantPersistence;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,8 +20,8 @@ public class RestaurantController {
     }
 
     @PostMapping
-    public ResponseEntity<Void> saveNewRestaurant(@RequestBody RestaurantModel restaurantModel){
-        restaurantPersistence.saveRestaurantPersistence(restaurantModel);
+    public ResponseEntity<Void> saveNewRestaurant(@RequestBody RestaurantEntity restaurantEntity){
+        restaurantPersistence.saveRestaurantPersistence(restaurantEntity);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 }

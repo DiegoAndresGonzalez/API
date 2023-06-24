@@ -10,7 +10,7 @@ public class RestaurantMapper {
         restaurantModel.setIdRestaurant(restaurantEntity.getIdRestaurant());
         restaurantModel.setName(restaurantEntity.getName());
         restaurantModel.setNit(restaurantEntity.getNit());
-        restaurantModel.setAddress(restaurantEntity.getCellPhoneRestaurant());
+        restaurantModel.setAddress(restaurantEntity.getAddress());
         restaurantModel.setUrlLogo(restaurantEntity.getUrlLogo());
         restaurantModel.setIdOwner(restaurantEntity.getIdOwner());
         return restaurantModel;
