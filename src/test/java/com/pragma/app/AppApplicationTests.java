@@ -7,7 +7,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 class AppApplicationTests {
 
 	@Test
-	void contextLoads() {
+	void test_modifyDish_wihtRequestInvalid_ShouldResponseAndStatusOK() {
 	}
+
+
 
 }
