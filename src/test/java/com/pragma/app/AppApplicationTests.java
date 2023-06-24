@@ -10,4 +10,16 @@ class AppApplicationTests {
 	void contextLoads() {
 	}
 
+	@Test
+	void test_saveDish_withInvalidOwner_ShouldResponseInvalidDataException(){
+	}
+
+	@Test
+	void test_saveDish_withInvalidRequest_ShouldResponseExceptionInvalidDataException(){
+	}
+
+	@Test
+	void test_saveDish_withInvalidRestaurantID_ShouldResponseObjectNotFound(){
+	}
+
 }
