@@ -1,4 +1,4 @@
-package com.pragma.app.infrastructure.drivenadapter.repository;
+package com.pragma.app.infrastructure.driveadapter.repository;
 
 import com.pragma.app.domain.model.RestaurantModel;
 
