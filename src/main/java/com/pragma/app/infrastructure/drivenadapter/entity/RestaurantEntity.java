@@ -1,4 +1,4 @@
-package com.pragma.app.infrastructure.entity;
+package com.pragma.app.infrastructure.drivenadapter.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
