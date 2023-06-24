@@ -16,13 +16,13 @@ public class AdminUseCase implements IRestaurantServicePort {
     @Override
     public RestaurantModel saveRestaurant(RestaurantModel restaurantModel) {
 
-        isContainsRestaurantNameOnlyNumbers(restaurantModel.getCellPhoneRestaurant());
+        validateIfCellPhoneRestaurantContainsOnlyNumbers(restaurantModel.getCellPhoneRestaurant());
 
         if(restaurantModel.getAddress() == null ){
             throw new InvalidDataException("Fields required");
         }
 
-        if(restaurantModel.getNit().matches("\\d+")) {
+        if(!restaurantModel.getNit().matches("\\d+")) {
             throw new InvalidDataException("The NIT must contain only numeric");
         }
 
@@ -30,7 +30,9 @@ public class AdminUseCase implements IRestaurantServicePort {
         return  restaurantModel;
     }
 
-    private boolean isContainsRestaurantNameOnlyNumbers(String nameRestaurant) {
-        return nameRestaurant.matches("\\d+");
+    private void validateIfCellPhoneRestaurantContainsOnlyNumbers(String cellPhoneRestaurant) {
+        if(!cellPhoneRestaurant.matches("\\d+")) {
+            throw new InvalidDataException("The cell phone field must contain only numbers");
+        }
     }
 }
