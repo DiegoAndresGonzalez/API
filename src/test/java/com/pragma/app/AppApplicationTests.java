@@ -10,4 +10,7 @@ class AppApplicationTests {
 	void contextLoads() {
 	}
 
+	@Test
+	void test_updateDish_withRequestOff_shouldResponseIsUserAdmin() {
+	}
 }
