@@ -23,7 +23,7 @@ public class OwnerUseCase implements IDishServicePort {
             throw new InvalidDataException("Restaurant's ID can't be blank, please introduce a Restaurant ID.");
         }
         if (dishModel.getPrice() == null || dishModel.getPrice() <= 0) {
-            throw new InvalidDataException("Dish's price can't be blank, lower or same than 0");
+            throw new InvalidDataException("Dish's price can't be blank, lower or same than 0.");
         }
         if (dishModel.getUrlImage() == null){
             throw new InvalidDataException("Dish's portrait can't be blank, please add an image of it.");
