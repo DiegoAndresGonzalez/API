@@ -1,12 +1,14 @@
 package com.pragma.app.application.dto.response;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Setter;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
+@Setter
 public class CreateDishResponseDTO {
 
     private Long id;
