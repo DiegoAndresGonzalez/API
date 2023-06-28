@@ -1,7 +1,6 @@
 package com.pragma.app.infrastructure.entrypoint;
 
 import com.pragma.app.infrastructure.driveadapter.entity.RestaurantEntity;
-import com.pragma.app.infrastructure.driveadapter.persistence.IRestaurantPersistence;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
