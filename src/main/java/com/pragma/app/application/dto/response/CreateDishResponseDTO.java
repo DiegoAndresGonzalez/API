@@ -1,6 +1,8 @@
-package com.pragma.app.domain.model;
+package com.pragma.app.application.dto.response;
 
-public class DishModel {
+import com.pragma.app.domain.model.RestaurantModel;
+
+public class CreateDishResponseDTO {
 
     private Long id;
     private String name;
@@ -10,23 +12,6 @@ public class DishModel {
     private String category;
     private RestaurantModel idRestaurant;
     private boolean active;
-
-    public DishModel(Long id, String name, Integer price, String description) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
-        this.description = description;
-    }
-
-    public DishModel(String urlImage, String category, RestaurantModel idRestaurant, boolean active) {
-        this.urlImage = urlImage;
-        this.category = category;
-        this.idRestaurant = idRestaurant;
-        this.active = active;
-    }
-
-    public DishModel() {
-    }
 
     public Long getId() {
         return id;
@@ -42,6 +27,14 @@ public class DishModel {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Integer getPrice() {
+        return price;
+    }
+
+    public void setPrice(Integer price) {
+        this.price = price;
     }
 
     public String getDescription() {
@@ -82,13 +75,5 @@ public class DishModel {
 
     public void setActive(boolean active) {
         this.active = active;
-    }
-
-    public Integer getPrice() {
-        return price;
-    }
-
-    public void setPrice(Integer price) {
-        this.price = price;
     }
 }
