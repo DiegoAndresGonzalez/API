@@ -11,13 +11,11 @@ import lombok.Setter;
 @Getter
 public class CreateDishRequestDTO {
 
-    private Long id;
     private String name;
     private Integer price;
     private String description;
     private String urlImage;
     private String category;
     private Long idRestaurant;
-    private boolean active;
 
 }
