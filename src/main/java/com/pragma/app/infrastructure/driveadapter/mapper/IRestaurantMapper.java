@@ -5,7 +5,7 @@ import com.pragma.app.infrastructure.driveadapter.entity.RestaurantEntity;
 import org.mapstruct.Mapper;
 
 @Mapper
-public interface RestaurantMapper {
+public interface IRestaurantMapper {
     RestaurantModel mapToRestaurantModel(RestaurantEntity restaurantEntity);
     RestaurantEntity mapToRestaurantEntity(RestaurantModel restaurantModel);
 }
