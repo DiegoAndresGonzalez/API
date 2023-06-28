@@ -8,7 +8,7 @@ public class DishModel {
     private String description;
     private String urlImage;
     private String category;
-    private Long idRestaurant;
+    private RestaurantModel idRestaurant;
     private boolean active;
 
     public DishModel(Long id, String name, Integer price, String description) {
@@ -18,7 +18,7 @@ public class DishModel {
         this.description = description;
     }
 
-    public DishModel(String urlImage, String category, Long idRestaurant, boolean active) {
+    public DishModel(String urlImage, String category, RestaurantModel idRestaurant, boolean active) {
         this.urlImage = urlImage;
         this.category = category;
         this.idRestaurant = idRestaurant;
@@ -68,11 +68,11 @@ public class DishModel {
         this.category = category;
     }
 
-    public Long getIdRestaurant() {
+    public RestaurantModel getIdRestaurant() {
         return idRestaurant;
     }
 
-    public void setIdRestaurant(Long idRestaurant) {
+    public void setIdRestaurant(RestaurantModel idRestaurant) {
         this.idRestaurant = idRestaurant;
     }
 
