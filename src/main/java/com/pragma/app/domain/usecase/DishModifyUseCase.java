@@ -6,11 +6,11 @@ import com.pragma.app.domain.exception.InvalidFieldModification;
 import com.pragma.app.domain.model.DishModel;
 import com.pragma.app.domain.spi.PersistenceRestaurantDishPort;
 
-public class dishModifyUseCase implements ServiceRestaurantDishPort {
+public class DishModifyUseCase implements ServiceRestaurantDishPort {
 
     private final PersistenceRestaurantDishPort persistenceRestaurantDish;
 
-    public dishModifyUseCase(PersistenceRestaurantDishPort persistenceRestaurantDish) {
+    public DishModifyUseCase(PersistenceRestaurantDishPort persistenceRestaurantDish) {
         this.persistenceRestaurantDish = persistenceRestaurantDish;
     }
 
