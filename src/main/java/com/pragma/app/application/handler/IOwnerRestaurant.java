@@ -4,5 +4,5 @@ import com.pragma.app.application.dto.request.CreateDishRequestDTO;
 import com.pragma.app.application.dto.response.CreateDishResponseDTO;
 
 public interface IOwnerRestaurant {
-    CreateDishResponseDTO saveDish (CreateDishRequestDTO requestDTO);
+    CreateDishRequestDTO createDish(CreateDishRequestDTO request);
 }

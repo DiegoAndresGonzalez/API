@@ -1,18 +1,18 @@
-package com.pragma.app.application.dto.request;
+package com.pragma.app.application.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
 @Setter
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class ModifyDescriptionPriceDishDTO {
+public class ModifyDescriptionPriceDishResponseDTO {
     private Long id;
-    private String description;
     private Integer price;
-
+    private String description;
 
 }
