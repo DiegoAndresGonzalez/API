@@ -9,8 +9,7 @@ public class OwnerUseCase implements IDishServicePort {
 
     private final IDishPersistencePort dishPersistence;
 
-    public OwnerUseCase(IDishPersistencePort dishPersistence) {
-        this.dishPersistence = dishPersistence;
+    public OwnerUseCase(IDishPersistencePort dishPersistence) {this.dishPersistence = dishPersistence;
     }
 
     @Override

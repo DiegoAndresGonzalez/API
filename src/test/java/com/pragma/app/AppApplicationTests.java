@@ -2,14 +2,16 @@ package com.pragma.app;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-
 @SpringBootTest
 class AppApplicationTests {
 
 	@Test
-	void contextLoads() {
-	}
+	void test_modifyDish_wihtRequestInvalid_ShouldResponseAndStatusOK() {
 
+<<<<<<< HEAD
+	}
+}
+=======
 	@Test
 	void test_saveDish_withInvalidOwner_ShouldResponseInvalidDataException(){
 	}
@@ -23,3 +25,4 @@ class AppApplicationTests {
 	}
 
 }
+>>>>>>> develop
