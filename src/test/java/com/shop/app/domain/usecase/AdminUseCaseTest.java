@@ -5,16 +5,16 @@ import org.junit.jupiter.api.Test;
 class AdminUseCaseTest {
 
     @Test
-    void test_saveRestaurant_whenValidCellPhoneAndNumericNIT_shouldPersistRestaurant() {
+    void test_saveShop_whenValidCellPhoneAndNumericNIT_shouldPersistShop() {
     }
 
     @Test
-    void test_saveRestaurant_whenInvalidCellPhone_shouldThrowInvalidDataException(){
+    void test_saveShop_whenInvalidCellPhone_shouldThrowInvalidDataException(){
 
     }
 
     @Test
-    void test_saveRestaurant_whenNumericNit_shouldThrowInvalidDataException(){
+    void test_saveShop_whenNumericNit_shouldThrowInvalidDataException(){
 
     }
 }
