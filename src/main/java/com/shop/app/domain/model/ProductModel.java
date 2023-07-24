@@ -68,14 +68,6 @@ public class ProductModel {
         this.category = category;
     }
 
-    public ShopModel getIdShop() {
-        return idShop;
-    }
-
-    public void setIdShop(ShopModel idShop) {
-        this.idShop = idShop;
-    }
-
     public boolean isActive() {
         return active;
     }
@@ -91,4 +83,13 @@ public class ProductModel {
     public void setPrice(Integer price) {
         this.price = price;
     }
+
+    public ShopModel getIdShop() {
+        return idShop;
+    }
+
+    public void setIdShop(ShopModel idShop) {
+        this.idShop = idShop;
+    }
+
 }

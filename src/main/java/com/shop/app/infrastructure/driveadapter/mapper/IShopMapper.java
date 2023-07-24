@@ -8,4 +8,5 @@ import org.mapstruct.Mapper;
 public interface IShopMapper {
     ShopModel mapToShopModel(ShopEntity shopEntity);
     ShopEntity mapToShopEntity(ShopModel shopModel);
+
 }

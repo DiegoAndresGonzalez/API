@@ -19,9 +19,7 @@ public class OwnerUseCase implements IProductServicePort {
         if (productModel.getName() == null) {
             throw new InvalidDataException("Product's name can't be blank, please introduce a name.");
         }
-        if (productModel.getIdShop() == null) {
-            throw new InvalidDataException("Shop's ID can't be blank, please introduce a Shop ID.");
-        }
+
         if (productModel.getPrice() == null || productModel.getPrice() <= 0) {
             throw new InvalidDataException("Product's price can't be blank, lower or same than 0");
         }

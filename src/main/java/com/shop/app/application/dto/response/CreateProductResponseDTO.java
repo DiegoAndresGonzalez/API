@@ -18,7 +18,6 @@ public class CreateProductResponseDTO {
     private String description;
     private String urlImage;
     private String category;
-    private ShopModel idShop;
     private boolean active;
 
     public Long getId() {
@@ -67,14 +66,6 @@ public class CreateProductResponseDTO {
 
     public void setCategory(String category) {
         this.category = category;
-    }
-
-    public ShopModel getIdShop() {
-        return idShop;
-    }
-
-    public void setIdShop(ShopModel idShop) {
-        this.idShop = idShop;
     }
 
     public boolean isActive() {

@@ -30,8 +30,14 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
     implementation 'org.springdoc:springdoc-openapi-ui:1.6.11'
+	implementation 'org.mapstruct:mapstruct:1.5.5.Final'
+	annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.5.Final'
 }
 
 tasks.named('test') {
 	useJUnitPlatform()
+}
+
+compileJava {
+	options.compilerArgs = ['-Amapstruct.defaultComponentModel=spring']
 }

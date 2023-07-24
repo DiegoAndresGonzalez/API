@@ -1,26 +1,28 @@
 package com.shop.app.infrastructure.driveadapter.entity;
 
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import com.shop.app.infrastructure.driveadapter.entity.ShopEntity;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "dish")
+@Table(name = "product")
 @Setter
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class DishEntity {
+public class ProductEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,8 +33,8 @@ public class DishEntity {
     private String urlImage;
     private String category;
 
-    @ManyToOne
-    @JoinColumn(name = "idShop")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "shop_id")
     private ShopEntity idShop;
     private boolean active;
 
