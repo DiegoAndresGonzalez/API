@@ -7,7 +7,6 @@ import com.shop.app.infrastructure.driveadapter.repository.IShopRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-
 @Configuration
 public class ShopConfig {
 
@@ -19,4 +18,3 @@ public class ShopConfig {
         return new ShopPersistence(shopRepository, shopMapper);
     }
 
-}
