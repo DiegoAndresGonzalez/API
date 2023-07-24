@@ -18,4 +18,3 @@ public class ShopConfig {
         return new ShopPersistence(shopRepository, shopMapper);
     }
 
-}
