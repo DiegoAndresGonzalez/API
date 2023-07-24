@@ -9,7 +9,7 @@ public class ProductModel {
     private String urlImage;
     private String category;
     private ShopModel idShop;
-    private boolean active;
+    private boolean active = true;
 
     public ProductModel(Long id, String name, Integer price, String description) {
         this.id = id;
@@ -73,7 +73,7 @@ public class ProductModel {
     }
 
     public void setActive(boolean active) {
-        this.active = active;
+        this.active = true;
     }
 
     public Integer getPrice() {

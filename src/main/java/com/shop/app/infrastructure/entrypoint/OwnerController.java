@@ -1,9 +1,11 @@
 package com.shop.app.infrastructure.entrypoint;
 
 import com.shop.app.application.dto.request.CreateProductRequestDTO;
+import com.shop.app.application.dto.response.CreateProductResponseDTO;
 import com.shop.app.domain.model.ProductModel;
 import com.shop.app.domain.model.ShopModel;
 import com.shop.app.domain.spi.IProductPersistencePort;
+import com.shop.app.domain.usecase.OwnerUseCase;
 import com.shop.app.infrastructure.driveadapter.mapper.IProductMapper;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -22,13 +24,17 @@ public class OwnerController {
 
     @Autowired
     private final IProductPersistencePort productPersistencePort;
+
     @Autowired
     private final IProductMapper productMapper;
 
+    @Autowired
+    private final OwnerUseCase ownerUseCase;
 
-    public OwnerController(IProductPersistencePort productPersistencePort, IProductMapper productMapper) {
+    public OwnerController(IProductPersistencePort productPersistencePort, IProductMapper productMapper,OwnerUseCase ownerUseCase) {
         this.productPersistencePort = productPersistencePort;
         this.productMapper = productMapper;
+        this.ownerUseCase = ownerUseCase;
     }
 
     @PostMapping
@@ -41,12 +47,14 @@ public class OwnerController {
             @ApiResponse(responseCode = "409", description = "A conflict has occurred, please, try again.")
     })
 
-    public ResponseEntity<String> saveProduct(@RequestBody CreateProductRequestDTO productRequestDTO){
+    public ResponseEntity<CreateProductResponseDTO> saveProduct(@RequestBody CreateProductRequestDTO productRequestDTO){
         ShopModel shopModel = productMapper.mapToShopID(productRequestDTO.getIdShop());
         ProductModel productModel = productMapper.mapToProductDTO(productRequestDTO);
         productModel.setIdShop(shopModel);
-        productPersistencePort.saveProductPersistence(productModel);
-        return ResponseEntity.status(HttpStatus.CREATED).build();
+        ProductModel savedProduct = productPersistencePort.saveProductPersistence(productModel);
+        CreateProductResponseDTO productResponseDTO = productMapper.mapToResponseDTO(savedProduct);
+        ownerUseCase.saveProduct(savedProduct);
+        return ResponseEntity.status(HttpStatus.CREATED).body(productResponseDTO);
     }
 
 }
