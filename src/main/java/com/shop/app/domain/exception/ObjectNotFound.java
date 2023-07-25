@@ -1,7 +1,0 @@
-package com.shop.app.domain.exception;
-
-public class ObjectNotFound extends RuntimeException {
-    public ObjectNotFound(String message) {
-        super(message);
-    }
-}

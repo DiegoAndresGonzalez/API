@@ -1,6 +1,7 @@
 package com.shop.app.infrastructure.driveadapter.mapper;
 
 import com.shop.app.application.dto.request.CreateProductRequestDTO;
+import com.shop.app.application.dto.response.CreateProductResponseDTO;
 import com.shop.app.domain.model.ProductModel;
 import com.shop.app.domain.model.ShopModel;
 import com.shop.app.infrastructure.driveadapter.entity.ProductEntity;
@@ -18,5 +19,7 @@ public interface IProductMapper {
     ProductModel mapToProductDTO(CreateProductRequestDTO createProductRequestDTO);
 
     ShopModel mapToShopID(Long idShop);
+
+    CreateProductResponseDTO mapToResponseDTO(ProductModel productModel);
 
 }
