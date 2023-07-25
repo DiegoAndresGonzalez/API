@@ -2,10 +2,9 @@ package com.shop.app.domain.usecase;
 
 import com.shop.app.domain.api.IProductServicePort;
 import com.shop.app.domain.exception.InvalidDataException;
-import com.shop.app.domain.exception.ObjectNotFoundException;
 import com.shop.app.domain.model.ProductModel;
-import com.shop.app.domain.model.ShopModel;
 import com.shop.app.domain.spi.IProductPersistencePort;
+
 
 public class OwnerUseCase implements IProductServicePort {
 
@@ -36,11 +35,12 @@ public class OwnerUseCase implements IProductServicePort {
         if (productModel.getCategory() == null) {
             throw new InvalidDataException("Product's category can't be blank, please introduce a category for the product.");
         }
-        ShopModel shopModel = productPersistence.findShopById(productModel.getIdShop().getIdShop());
-        if (shopModel == null) {
-            throw new ObjectNotFoundException("Shop with ID " + productModel.getIdShop().getIdShop() + " not found.");
+        if (productModel == null){
+            throw new InvalidDataException("Data is missing, please check again.");
         }
+            else {
         productModel.setActive(true);
         return productPersistence.saveProductPersistence(productModel);
     }
+  }
 }

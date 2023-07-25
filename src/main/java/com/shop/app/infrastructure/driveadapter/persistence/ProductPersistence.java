@@ -1,7 +1,6 @@
 package com.shop.app.infrastructure.driveadapter.persistence;
 
 import com.shop.app.domain.model.ProductModel;
-import com.shop.app.domain.model.ShopModel;
 import com.shop.app.domain.spi.IProductPersistencePort;
 import com.shop.app.infrastructure.driveadapter.entity.ProductEntity;
 import com.shop.app.infrastructure.driveadapter.mapper.IProductMapper;
@@ -27,8 +26,4 @@ public class ProductPersistence implements IProductPersistencePort {
         return productMapper.mapToProductModel(savedEntity);
     }
 
-    @Override
-    public ShopModel findShopById(Long idShop) {
-        return null;
-    }
 }

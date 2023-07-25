@@ -51,9 +51,8 @@ public class OwnerController {
         ShopModel shopModel = productMapper.mapToShopID(productRequestDTO.getIdShop());
         ProductModel productModel = productMapper.mapToProductDTO(productRequestDTO);
         productModel.setIdShop(shopModel);
-        ProductModel savedProduct = productPersistencePort.saveProductPersistence(productModel);
+        ProductModel savedProduct = ownerUseCase.saveProduct(productModel);
         CreateProductResponseDTO productResponseDTO = productMapper.mapToResponseDTO(savedProduct);
-        ownerUseCase.saveProduct(savedProduct);
         return ResponseEntity.status(HttpStatus.CREATED).body(productResponseDTO);
     }
 

@@ -17,4 +17,4 @@ public class ShopConfig {
     public IShopPersistencePort shopPersistencePort(){
         return new ShopPersistence(shopRepository, shopMapper);
     }
-
+}
