@@ -1,5 +1,6 @@
 package com.shop.app.infrastructure.driveadapter.persistence;
 
+import com.shop.app.domain.exception.ObjectNotFoundException;
 import com.shop.app.domain.model.ProductModel;
 import com.shop.app.domain.spi.IProductPersistencePort;
 import com.shop.app.infrastructure.driveadapter.entity.ProductEntity;
@@ -24,6 +25,15 @@ public class ProductPersistence implements IProductPersistencePort {
         ProductEntity productEntity = productMapper.mapToProductEntity(productModel);
         ProductEntity savedEntity = productRepository.save(productEntity);
         return productMapper.mapToProductModel(savedEntity);
+    }
+
+    @Override
+    public ProductModel deleteProductPersistence(ProductModel productModel) {
+        Long productId = productModel.getId();
+        ProductEntity productEntity = productRepository.findById(productId)
+                .orElseThrow(()-> new ObjectNotFoundException("Product with id "+ productId + "not found"));
+        productRepository.delete(productEntity);
+        return productMapper.mapToProductModel(productEntity);
     }
 
 }

@@ -40,4 +40,6 @@ public class AdminController {
         shopPersistencePort.saveShopPersistence(shopModel);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
+
+
 }
