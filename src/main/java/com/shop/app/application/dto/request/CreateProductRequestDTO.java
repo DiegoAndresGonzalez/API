@@ -17,7 +17,7 @@ public class CreateProductRequestDTO {
     private String description;
     private String urlImage;
     private String category;
-    private Long idShop;
+    private ShopModel idShop;
 
 }
 

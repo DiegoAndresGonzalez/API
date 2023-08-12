@@ -3,10 +3,10 @@ package com.shop.app.infrastructure.entrypoint;
 import com.shop.app.application.dto.request.CreateProductRequestDTO;
 import com.shop.app.application.dto.response.CreateProductResponseDTO;
 import com.shop.app.domain.model.ProductModel;
-import com.shop.app.domain.model.ShopModel;
 import com.shop.app.domain.spi.IProductPersistencePort;
 import com.shop.app.domain.usecase.OwnerUseCase;
 import com.shop.app.infrastructure.driveadapter.mapper.IProductMapper;
+import com.shop.app.infrastructure.driveadapter.repository.IShopRepository;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
@@ -31,7 +31,8 @@ public class OwnerController {
     @Autowired
     private final OwnerUseCase ownerUseCase;
 
-    public OwnerController(IProductPersistencePort productPersistencePort, IProductMapper productMapper,OwnerUseCase ownerUseCase) {
+
+    public OwnerController(IProductPersistencePort productPersistencePort, IProductMapper productMapper, OwnerUseCase ownerUseCase) {
         this.productPersistencePort = productPersistencePort;
         this.productMapper = productMapper;
         this.ownerUseCase = ownerUseCase;
@@ -48,9 +49,7 @@ public class OwnerController {
     })
 
     public ResponseEntity<CreateProductResponseDTO> saveProduct(@RequestBody CreateProductRequestDTO productRequestDTO){
-        ShopModel shopModel = productMapper.mapToShopID(productRequestDTO.getIdShop());
         ProductModel productModel = productMapper.mapToProductDTO(productRequestDTO);
-        productModel.setIdShop(shopModel);
         ProductModel savedProduct = ownerUseCase.saveProduct(productModel);
         CreateProductResponseDTO productResponseDTO = productMapper.mapToResponseDTO(savedProduct);
         return ResponseEntity.status(HttpStatus.CREATED).body(productResponseDTO);

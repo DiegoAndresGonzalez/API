@@ -7,10 +7,8 @@ import com.shop.app.domain.model.ShopModel;
 import com.shop.app.infrastructure.driveadapter.entity.ProductEntity;
 import org.mapstruct.Mapper;
 
-
 @Mapper
 public interface IProductMapper {
-
 
     ProductModel mapToProductModel(ProductEntity productEntity);
 

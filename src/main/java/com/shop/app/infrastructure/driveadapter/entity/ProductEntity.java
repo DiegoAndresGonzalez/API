@@ -15,7 +15,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.lang.Nullable;
 
 @Entity
 @Table(name = "product")
@@ -34,7 +33,7 @@ public class ProductEntity {
     private String urlImage;
     private String category;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "shop_id")
     private ShopEntity idShop;
     private boolean active;

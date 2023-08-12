@@ -5,7 +5,6 @@ import com.shop.app.domain.exception.InvalidDataException;
 import com.shop.app.domain.model.ProductModel;
 import com.shop.app.domain.spi.IProductPersistencePort;
 
-
 public class OwnerUseCase implements IProductServicePort {
 
     private final IProductPersistencePort productPersistence;
@@ -35,10 +34,7 @@ public class OwnerUseCase implements IProductServicePort {
         if (productModel.getCategory() == null) {
             throw new InvalidDataException("Product's category can't be blank, please introduce a category for the product.");
         }
-        if (productModel == null){
-            throw new InvalidDataException("Data is missing, please check again.");
-        }
-            else {
+        else {
         productModel.setActive(true);
         return productPersistence.saveProductPersistence(productModel);
     }
